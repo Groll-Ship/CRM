@@ -6,5 +6,7 @@ namespace data.Models
     {
         public int IdLead  { get; set; }
         public string HistoryText { get; set; }
+
+        public virtual Lead Lead { get; set; }
     }
 }
