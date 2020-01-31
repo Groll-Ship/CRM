@@ -2,7 +2,7 @@
 
 namespace data.Models
 {
-    public class Groupe
+    public class Group
     {
         public string GroupeId  { get; set; }
         public int IdCourse { get; set; }

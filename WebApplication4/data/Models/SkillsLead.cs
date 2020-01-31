@@ -6,14 +6,11 @@ namespace data.Models
     {
         public int LeadID { get; set; }
         public Lead Lead { get; set; }
-        public Skills Skill { get; set; }
+       
         public int SkillsID { get; set; }
-  
-    
-    
-    
-    
-    
+         public Skills Skill { get; set; }
+
     } 
-    //kkjhkjhkjh
+   
+
 }
