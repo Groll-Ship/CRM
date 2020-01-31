@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\WebApplication4\\TestWeb.csproj": {}
+    "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\WebApplication4\\TestWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\busines.csproj": {
+    "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\busines.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\busines.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\busines.csproj",
         "projectName": "busines",
-        "projectPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\busines.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\busines.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\data.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\data.csproj"
+              "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\data.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\data.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\data.csproj": {
+    "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\data.csproj",
         "projectName": "data",
-        "projectPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\data.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\data\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -188,14 +188,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\WebApplication4\\TestWeb.csproj": {
+    "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\WebApplication4\\TestWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\WebApplication4\\TestWeb.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\WebApplication4\\TestWeb.csproj",
         "projectName": "TestWeb",
-        "projectPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\WebApplication4\\TestWeb.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\WebApplication4\\TestWeb.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\WebApplication4\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\WebApplication4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -211,8 +211,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\busines.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Work\\WebApplication4\\ClassLibrary1\\busines.csproj"
+              "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\busines.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build\\CRM\\WebApplication4\\ClassLibrary1\\busines.csproj"
               }
             }
           }

@@ -11,11 +11,10 @@ namespace TestWeb.Controllers
     [Route("[controller]")]
     public class ApiController : ControllerBase
     {
-       
         [HttpGet]
         public string Get()
         {
-            return t.ShowAll();
+            return "0";
         }
     }
 }
