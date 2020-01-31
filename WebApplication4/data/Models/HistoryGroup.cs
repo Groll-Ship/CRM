@@ -4,9 +4,9 @@ using System.Text;
 
 namespace data.Models
 {
-    class HistoryGroupe
+    class HistoryGroup
     {
-        public string GroupeName { get; set; }
+        public string GroupName { get; set; }
         public string HistoryText { get; set; }
     }
 }
