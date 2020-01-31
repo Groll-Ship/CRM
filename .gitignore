@@ -30,3 +30,7 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+/WebApplication4/ClassLibrary1/obj/Debug/netcoreapp3.0/busines.assets.cache
+/WebApplication4/ClassLibrary1/obj/Debug/netcoreapp3.0/busines.assets.cache
+/WebApplication4/WebApplication4/obj/Debug/netcoreapp3.0/TestWeb.assets.cache
+/WebApplication4/data/obj/Debug/netcoreapp3.0/data.assets.cache
