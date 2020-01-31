@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWeb", "WebApplication4\TestWeb.csproj", "{2E8671FD-535A-4C2E-9519-AAAF0B258761}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "busines", "ClassLibrary1\busines.csproj", "{DAD20E8D-7F60-4BBC-A5FB-12D8C6620BD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data", "data\data.csproj", "{8FF08C14-29FB-4C53-9DDD-DAC032781215}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E8671FD-535A-4C2E-9519-AAAF0B258761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8671FD-535A-4C2E-9519-AAAF0B258761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8671FD-535A-4C2E-9519-AAAF0B258761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8671FD-535A-4C2E-9519-AAAF0B258761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD20E8D-7F60-4BBC-A5FB-12D8C6620BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD20E8D-7F60-4BBC-A5FB-12D8C6620BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD20E8D-7F60-4BBC-A5FB-12D8C6620BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD20E8D-7F60-4BBC-A5FB-12D8C6620BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF08C14-29FB-4C53-9DDD-DAC032781215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF08C14-29FB-4C53-9DDD-DAC032781215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF08C14-29FB-4C53-9DDD-DAC032781215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF08C14-29FB-4C53-9DDD-DAC032781215}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {780A861B-EE2B-44D1-9A07-68C21720664B}
+	EndGlobalSection
+EndGlobal
