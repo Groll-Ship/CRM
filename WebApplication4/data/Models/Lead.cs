@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace data.Models
 {
-    public class Lead 
+    public class Lead
     {
-        public int IdLead { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
@@ -34,9 +35,15 @@ namespace data.Models
         public bool AccessStatus { get; set; }
 
         [StringLength(50)]
-        public string GroupName { get; set; }
-        public int IdStatus { get; set; }
-        public int IdCourse { get; set; }
+        public string NameGroup { get; set; }
+        [ForeignKey("NameGroup")]
+        public Group Group { get; set; }
+
+        public int StatusId { get; set; }
+        public Status Status { get; set; }
+
+        public int CourseId { get; set; }
+        public Course Course { get; set; }
 
         public virtual ICollection<History> History { get; set; }
     }

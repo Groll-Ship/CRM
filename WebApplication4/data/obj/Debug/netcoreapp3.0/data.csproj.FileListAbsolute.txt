@@ -16,3 +16,13 @@ C:\Users\User\Desktop\Work\WebApplication4\data\bin\Debug\netcoreapp3.0\data.dll
 C:\Users\User\Desktop\Work\WebApplication4\data\bin\Debug\netcoreapp3.0\data.pdb
 C:\Users\User\Desktop\Work\WebApplication4\data\bin\Debug\netcoreapp3.0\data.runtimeconfig.json
 C:\Users\User\Desktop\Work\WebApplication4\data\bin\Debug\netcoreapp3.0\data.runtimeconfig.dev.json
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\bin\Debug\netcoreapp3.0\data.deps.json
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\bin\Debug\netcoreapp3.0\data.runtimeconfig.json
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\bin\Debug\netcoreapp3.0\data.runtimeconfig.dev.json
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\bin\Debug\netcoreapp3.0\data.dll
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\bin\Debug\netcoreapp3.0\data.pdb
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\obj\Debug\netcoreapp3.0\data.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\obj\Debug\netcoreapp3.0\data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\obj\Debug\netcoreapp3.0\data.AssemblyInfo.cs
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\obj\Debug\netcoreapp3.0\data.dll
+C:\Users\User\Desktop\Work\Build_1.0\CRM\WebApplication4\data\obj\Debug\netcoreapp3.0\data.pdb

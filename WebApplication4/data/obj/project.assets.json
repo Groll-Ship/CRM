@@ -5429,11 +5429,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\groll\\CRM\\WebApplication4\\data\\data.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\Build_1.0\\CRM\\WebApplication4\\data\\data.csproj",
       "projectName": "data",
-      "projectPath": "C:\\Users\\User\\Desktop\\groll\\CRM\\WebApplication4\\data\\data.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Work\\Build_1.0\\CRM\\WebApplication4\\data\\data.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\groll\\CRM\\WebApplication4\\data\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Work\\Build_1.0\\CRM\\WebApplication4\\data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5512,7 +5512,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

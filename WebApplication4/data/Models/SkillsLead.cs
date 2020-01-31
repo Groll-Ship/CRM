@@ -5,9 +5,9 @@ namespace data.Models
 {
     public class SkillsLead
     {
-        public int LeadID { get; set; }
+        public int LeadId { get; set; }
         public Lead Lead { get; set; }
-        public int SkillsID { get; set; }
+        public int SkillsId { get; set; }
         public Skills Skill { get; set; }
     }
 }

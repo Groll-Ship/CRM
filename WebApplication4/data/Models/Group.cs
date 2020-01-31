@@ -6,7 +6,7 @@ namespace data.Models
     public class Group
     {
         [Key]
-        public string GroupName { get; set; }
+        public string NameGroup { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
         public string StartDate { get; set; }
