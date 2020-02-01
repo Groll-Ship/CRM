@@ -2,6 +2,15 @@
 #Ignore thumbnails created by Windows
 Thumbs.db
 #Ignore files built by Visual Studio
+*WebApplication4/.vs
+*WebApplication4/bin
+*WebApplication4/obj
+*ClassLibrary1/obj
+*ClassLibrary1/bin
+*data/obj
+*data/bin
+*CRMTest/obj
+*CRMTest/bin
 *.obj
 *.exe
 *.pdb
