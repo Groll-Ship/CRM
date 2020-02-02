@@ -3,7 +3,7 @@
 
 namespace data.Models
 {
-    public class SkillsLead
+    public class SkillsLead: IEntity
     {
         public int LeadId { get; set; }
         public Lead Lead { get; set; }

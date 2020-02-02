@@ -49,15 +49,7 @@ namespace CRMTest.stab
         }
 
 
-        //public IEnumerable<T> GetAll<T>(params object[] arg) where T : new()
-        //{
-        //    T proverka = new T();
-        //    if(proverka is data.Models.Group) { return new List<T>() { new T() {TeacherId = 1 } }; }
-        //    return new List<T>
-        //    {
-        //        new T() { }
-        //    };
-        //}
+        
         public IEnumerable<IEntity> GetAll<T>(params object[] arg) where T : new()
         {
             T proverka = new T();

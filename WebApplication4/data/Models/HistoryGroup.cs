@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace data.Models
 {
-    public class HistoryGroup
+    public class HistoryGroup: IEntity
     {
         public string GroupName { get; set; }
         public Group Group { get; set; }

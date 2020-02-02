@@ -2,7 +2,7 @@
 
 namespace data.Models
 {
-    public class History
+    public class History: IEntity
     {
         public int Id { get; set; }
         public Lead Lead { get; set; }
