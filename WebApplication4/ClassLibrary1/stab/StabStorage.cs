@@ -14,7 +14,7 @@ namespace CRMTest.stab
             _user = user;
         }
         public IEnumerable<T> GetAll<T>() where T: new()
-        { 
+        {
             return new List<T>
             {
                 new T() { }
@@ -36,13 +36,18 @@ namespace CRMTest.stab
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetAll<T>(int idTeacher) where T : new()
+        public IEnumerable<T> GetAll<T>(params object[] arg) where T : new()
         {
             return new List<T>
             {
                 new T() { }
             };
         }
+       
 
+        internal void Add<T, N, WAdded>(N indentity, params WAdded[] added) where T : new() where N : new() 
+        {
+            throw new NotImplementedException();
+        }
     }
 }

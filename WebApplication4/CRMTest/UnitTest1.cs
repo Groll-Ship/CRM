@@ -8,7 +8,7 @@ using System.Linq;
 namespace CRMTest
 {
     [TestFixture(typeof(AdminManager))]
-    //[TestFixture(typeof(HRManager))]
+    [TestFixture(typeof(HRManager))]
     //[TestFixture(typeof(TeacherManager))]
     public class Tests<TUser> where TUser : UserManager, new()
     {
@@ -20,13 +20,18 @@ namespace CRMTest
             this.user = new TUser();
         }
 
-        [Test]
-        [TestCase<Lead>()]
-        public void TestGet<T>() where T : new()
-        {
-            List<T> listObj = user.Get<T>().ToList();
-            Assert.AreEqual(listObj[0], new Lead());
-
+        [GenericTestCase(typeof(Lead))]
+        [GenericTestCase(typeof(Teachers))]
+        [GenericTestCase(typeof(HR))]
+        [GenericTestCase(typeof(Course))]
+        [GenericTestCase(typeof(Group))]
+        [GenericTestCase(typeof(History))]
+        [GenericTestCase(typeof(Status))]
+        [GenericTestCase(typeof(Skills))]
+        public void TestGet<U>() where U: new ()
+        {            
+            List<U> listObj = user.Get<U>().ToList();
+            Assert.IsTrue(listObj[0] is U);
         }
     }
 }

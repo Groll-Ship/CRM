@@ -12,10 +12,10 @@ namespace busines
         {
             _storage = new StabStorage(this);
 
-            //public IEnumerable<T> Delete<T, N>(N indentity) where T : new()
-            //{
-            //    return _storage.Delete<T, N>(indentity);
-            //}
+            public IEnumerable<T> Delete<T, N>(N indentity) where T : new()
+            {
+                return _storage.Delete<T, N>(indentity);
+            }
         }
     }
-}
+    }
