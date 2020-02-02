@@ -21,16 +21,40 @@ namespace CRMTest
         [Test]
         public void TestGetGroups()
         {
-            IList<Group> listresult = teacherManager.GetGroups().ToList();
-            int idresult = listresult[0].TeacherId;
-
-            Assert.AreEqual(idresult, teacher.Id);
+            List<Group> listresult = teacherManager.GetGroups().ToList();
+            foreach(Group item in listresult)
+            {
+                Assert.AreEqual(teacher.Id, item.TeacherId);
+            }
         }
-        //[Test]
-        //public void TestGetAllLeads()
-        //{
-        //    IList<Lead> listresult = teacherManager.GetAllLeads().ToList();
-        //    Assert.IsTrue(listresult[0] is Lead);
-        //}
+        [Test]
+        public void TestGetAllLeads()
+        {
+            List<Lead> listresult = teacherManager.GetAllLeads().ToList();
+            foreach(Lead item in listresult)
+            {
+                Assert.AreEqual(teacher.Id, item.Group.TeacherId);
+            }
+        }
+        [Test]
+        public void TestGetHistoryGroup()
+        {
+            Group group = new Group() { NameGroup = "C#001"};
+            List<HistoryGroup> listresult = teacherManager.GetHistoryGroup(group).ToList();
+            foreach(HistoryGroup item in listresult)
+            {
+                Assert.AreEqual(group.NameGroup, item.GroupName);
+            }
+        }
+        [Test]
+        public void TestGetLeadsGroup()
+        {
+            Group group = new Group() { NameGroup = "C#001" };
+            List<Lead> listresult = teacherManager.GetLeadsGroup(group).ToList();
+            foreach(Lead item in listresult)
+            {
+                Assert.AreEqual(group.NameGroup, item.NameGroup);
+            }
+        }
     }
 }
