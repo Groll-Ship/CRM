@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 namespace busines
 {
-    public class AdminManager: UserManager
+    public class AdminManager
     {
+<<<<<<< HEAD
         #region GET 
 
 
@@ -45,5 +46,17 @@ namespace busines
 
         #endregion
 
+=======
+        public AdminManager()
+        {
+        //    _storage = new StabStorage(this);
+
+        //    public IEnumerable<T> Delete<T, N>(N indentity) where T : new()
+        //    {
+        //        return _storage.Delete<T, N>(indentity);
+        //    }
+        }
+    }
+>>>>>>> 6a23c555cac006070d1c38906caf7ea29280942d
     }
 }

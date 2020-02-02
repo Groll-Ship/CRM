@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace data.Models
 {
-    public class HR
+    public class HR: IEntity
     {
         [Key]
         public int Id { get; set; }

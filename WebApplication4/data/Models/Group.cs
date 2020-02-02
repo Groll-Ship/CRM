@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace data.Models
 {
-    public class Group
+    public class Group: IEntity
     {
         [Key]
         public string NameGroup { get; set; }
