@@ -19,7 +19,7 @@ namespace busines
         /// </summary>
         /// <param name="id">Teacher ID</param>
         /// <returns></returns>
-        public IEnumerable<Course> GetTeacherCourses(int id) { return _storage.GetAll<Course>(id); }
+        public IEnumerable<Course> GetTeacherCourses(int id) { return (List<Course>)_storage.GetAll<Course>(id); }
 
         /// <summary>
         /// Get list of all groups
@@ -32,41 +32,41 @@ namespace busines
         /// </summary>
         /// <param name="id">Teacher ID</param>
         /// <returns></returns>
-        public IEnumerable<Course> GetTeacherGroups(int id) { return _storage.GetAll<Course>(id); }
+        public IEnumerable<Course> GetTeacherGroups(int id) { return (List<Course>)_storage.GetAll<Course>(id); }
 
         /// <summary>
         /// Get list of groups for one course
         /// </summary>
         /// <param name="id">Course ID</param>
         /// <returns></returns>
-        public IEnumerable<Course> GetCourseGroups(int id) { return _storage.GetAll<Course>(id); }
+        public IEnumerable<Course> GetCourseGroups(int id) { return (List<Course>)_storage.GetAll<Course>(id); }
 
         /// <summary>
         /// Get all HR
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Admin> GetHR() { return _storage.GetAll<Admin>(); }
+        public IEnumerable<HR> GetHR() { return _storage.GetAll<HR>(); }
 
         /// <summary>
         /// Get all active leads or not 
         /// </summary>
         /// <param name="accessStatus">AccessStatus == true if Leads is active else AccessStatus == false </param>
         /// <returns></returns>
-        public IEnumerable<Lead> GetLeads(bool accessStatus) { return _storage.GetAll<Lead>(accessStatus); }
+        public IEnumerable<Lead> GetLeads(bool accessStatus) { return (List<Lead>)_storage.GetAll<Lead>(accessStatus); }
 
         /// <summary>
         /// Get list of leads by status ID
         /// </summary>
         /// <param name="id">status ID</param>
         /// <returns></returns>
-        public IEnumerable<Lead> GetLeadsByStatusId(int id) { return _storage.GetAll<Lead>(id); }
+        public IEnumerable<Lead> GetLeadsByStatusId(int id) { return (List<Lead>)_storage.GetAll<Lead>(id); }
 
         /// <summary>
         /// Get all leads from one group
         /// </summary>
         /// <param name="name">group name</param>
         /// <returns></returns>
-        public IEnumerable<Lead> GetLeadsByGroupName(string name) { return _storage.GetAll<Lead>(name); }
+        public IEnumerable<Lead> GetLeadsByGroupName(string name) { return (List<Lead>)_storage.GetAll<Lead>(name); }
 
         /// <summary>
         /// Get all teachers
@@ -79,14 +79,14 @@ namespace busines
         /// </summary>
         /// <param name="id">Lead ID</param>
         /// <returns></returns>
-        public IEnumerable<History> GetHistoryByLeadID(int id) { return _storage.GetAll<History>(id); }
+        public IEnumerable<History> GetHistoryByLeadID(int id) { return (List<History>)_storage.GetAll<History>(id); }
 
         /// <summary>
         /// Get all group history
         /// </summary>
         /// <param name="name">Group Name</param>
         /// <returns></returns>
-        public IEnumerable<HistoryGroup> GetHistoryByGroupName(string name) { return _storage.GetAll<HistoryGroup>(name); }
+        public IEnumerable<HistoryGroup> GetHistoryByGroupName(string name) { return (List<HistoryGroup>)_storage.GetAll<HistoryGroup>(name); }
 
         #endregion
 

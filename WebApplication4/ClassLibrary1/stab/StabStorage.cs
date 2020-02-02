@@ -29,14 +29,7 @@ namespace CRMTest.stab
 
         internal bool Delete<T, N>(N indentity) where T : new()
         {
-<<<<<<< HEAD
             return true;
-=======
-            return new List<T>
-            {
-                new T() { }
-            };
->>>>>>> 6a23c555cac006070d1c38906caf7ea29280942d
         }
 
         internal bool Delete<T, N1, N2>(N1 indentity1, N2 indentity2) where T : new()
@@ -45,27 +38,23 @@ namespace CRMTest.stab
         }
         internal T Creat<T>() where T : new()
         {
-            return new List<T>
-            {
-                new T() { }
-            };
+            return new T();
         }
 
-<<<<<<< HEAD
         internal T Update<T, N>(N indentity, Dictionary<string, object> ObjParams) where T : new()
         {
             throw new NotImplementedException();
         }
         
         internal IEnumerable<T> Update<T, N, TWhere>(N indentity, TWhere ObjWhere) where T : new()
-=======
+        {
+            throw new NotImplementedException();
+        }
+
         internal bool Update<T>(T indentity) where T : new()
->>>>>>> 6a23c555cac006070d1c38906caf7ea29280942d
         {
             return true;
         }
-
-
         
         public IEnumerable<IEntity> GetAll<T>(params object[] arg) where T : new()
         {

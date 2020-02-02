@@ -24,12 +24,12 @@ namespace busines
             List<Group> groups = (List<Group>)groupsprimari;
             return groups;
         }
-        public IEnumerable<Lead> GetAllLeads() { return _storage.GetAll<Lead>(_teacher); }
-        public IEnumerable<HistoryGroup> GetHistoryGroup(Group group) { return _storage.GetAll<HistoryGroup>(group); }
-        public IEnumerable<Lead> GetLeadsGroup(Group group) { return _storage.GetAll<Lead>(group); }
-        public IEnumerable<History> GetHistory(Lead lead) { return _storage.GetAll<History>(lead); }
-        public IEnumerable<Log> GetLog(Lead lead) { return _storage.GetAll<Log>(lead); }
-        public IEnumerable<SkillsLead> GetSkillsLead(Lead lead) { return _storage.GetAll<SkillsLead>(lead); }
+        public IEnumerable<Lead> GetAllLeads() { return (List<Lead>)_storage.GetAll<Lead>(_teacher); }
+        public IEnumerable<HistoryGroup> GetHistoryGroup(Group group) { return (List<HistoryGroup>)_storage.GetAll<HistoryGroup>(group); }
+        public IEnumerable<Lead> GetLeadsGroup(Group group) { return (List<Lead>)_storage.GetAll<Lead>(group); }
+        public IEnumerable<History> GetHistory(Lead lead) { return (List<History>)_storage.GetAll<History>(lead); }
+        public IEnumerable<Log> GetLog(Lead lead) { return (List<Log>)_storage.GetAll<Log>(lead); }
+        public IEnumerable<SkillsLead> GetSkillsLead(Lead lead) { return (List<SkillsLead>)_storage.GetAll<SkillsLead>(lead); }
         public IEnumerable<Skills> GetSkills() { return _storage.GetAll<Skills>(); }
         public void ChangeAccessStatusOfLead(Lead lead, bool accessStatus) { lead.AccessStatus = accessStatus; _storage.Update<Lead>(lead); }
         public void AddSkillsForlead(Lead lead, params Skills[] skills)

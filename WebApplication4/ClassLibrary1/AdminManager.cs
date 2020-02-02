@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 namespace busines
 {
-    public class AdminManager
+    public class AdminManager: UserManager
     {
-<<<<<<< HEAD
         #region GET 
 
 
@@ -29,7 +28,7 @@ namespace busines
 
         public bool DeleteCourseById(int id) { return _storage.Delete<Course, int>(id); }
         public bool DeleteGroupByName(string name) { return _storage.Delete<Group, string>(name); }
-        public bool DeleteHRById(int id) { return _storage.Delete<Admin, int>(id); }
+        public bool DeleteHRById(int id) { return _storage.Delete<HR, int>(id); }
         public bool DeleteLeadById(int id) { return _storage.Delete<Lead, int>(id); }
         public bool DeleteSkillsById(int id) { return _storage.Delete<Skills, int>(id); }
 
@@ -46,17 +45,5 @@ namespace busines
 
         #endregion
 
-=======
-        public AdminManager()
-        {
-        //    _storage = new StabStorage(this);
-
-        //    public IEnumerable<T> Delete<T, N>(N indentity) where T : new()
-        //    {
-        //        return _storage.Delete<T, N>(indentity);
-        //    }
-        }
-    }
->>>>>>> 6a23c555cac006070d1c38906caf7ea29280942d
     }
 }
