@@ -4,7 +4,7 @@ using System.Text;
 
 namespace data.Models
 {
-    public class Log
+    public class Log : IEntity
     {
         public DateTime Date { get; set; }
         public int LeadId { get; set; }

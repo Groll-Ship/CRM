@@ -2,7 +2,7 @@
 
 namespace data.Models
 {
-    public class Status 
+    public class Status : IEntity
     {
         public int Id  { get; set; }
         public string Name { get; set; }
