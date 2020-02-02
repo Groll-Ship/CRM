@@ -1,21 +1,49 @@
 ﻿using busines.Interface;
-using CRMTest.stab;
-using System;
+using data.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace busines
 {
     public class AdminManager: UserManager
     {
-        public AdminManager()
-        {
-            _storage = new StabStorage(this);
+        #region GET 
 
-            public IEnumerable<T> Delete<T, N>(N indentity) where T : new()
-            {
-                return _storage.Delete<T, N>(indentity);
-            }
-        }
+
+
+        #endregion
+
+        #region CREAT 
+
+        //creat HR
+        
+        #endregion
+
+        #region UPDATE 
+
+
+
+        #endregion
+
+        #region DELETE
+
+        public bool DeleteCourseById(int id) { return _storage.Delete<Course, int>(id); }
+        public bool DeleteGroupByName(string name) { return _storage.Delete<Group, string>(name); }
+        public bool DeleteHRById(int id) { return _storage.Delete<Admin, int>(id); }
+        public bool DeleteLeadById(int id) { return _storage.Delete<Lead, int>(id); }
+        public bool DeleteSkillsById(int id) { return _storage.Delete<Skills, int>(id); }
+
+        /// <summary>
+        /// Delete lead skill by lead ID and skill ID
+        /// </summary>
+        /// <param name="leadId">Lead ID</param>
+        /// <param name="skillId">Skill ID</param>
+        /// <returns></returns>
+        public bool DeleteLeadSkillById(int leadId, int skillId) { return _storage.Delete<SkillsLead, int, int>(leadId, skillId); }
+
+        public bool DeleteStatusById(int id) { return _storage.Delete<Status, int>(id); }
+        public bool DeleteTeacherById(int id) { return _storage.Delete<Teachers, int>(id); }
+
+        #endregion
+
     }
-    }
+}

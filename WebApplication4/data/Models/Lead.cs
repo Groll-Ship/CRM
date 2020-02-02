@@ -6,6 +6,7 @@ namespace data.Models
 {
     public class Lead
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]

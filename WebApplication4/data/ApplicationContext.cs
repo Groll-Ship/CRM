@@ -14,7 +14,7 @@ namespace data
         public DbSet<Lead> Leads { get; set; }
         public DbSet<History> Historys { get; set; }
         public DbSet<HistoryGroup> HistoryGroups { get; set; }
-        public DbSet<HR> HRs { get; set; }
+        public DbSet<Admin> HRs { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Skills> Skills { get; set; }
         public DbSet<Status> Statuss { get; set; }

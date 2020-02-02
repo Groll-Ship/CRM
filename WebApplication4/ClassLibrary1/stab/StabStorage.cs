@@ -21,16 +21,25 @@ namespace CRMTest.stab
             };
         }
 
-        internal IEnumerable<T> Delete<T, N>(N indentity) where T : new()
+        internal bool Delete<T, N>(N indentity) where T : new()
+        {
+            return true;
+        }
+
+        internal bool Delete<T, N1, N2>(N1 indentity1, N2 indentity2) where T : new()
+        {
+            return true;
+        }
+        internal T Creat<T>() where T : new()
         {
             throw new NotImplementedException();
         }
 
-        internal IEnumerable<T> Creat<T>() where T : new()
+        internal T Update<T, N>(N indentity, Dictionary<string, object> ObjParams) where T : new()
         {
             throw new NotImplementedException();
         }
-
+        
         internal IEnumerable<T> Update<T, N, TWhere>(N indentity, TWhere ObjWhere) where T : new()
         {
             throw new NotImplementedException();

@@ -22,7 +22,7 @@ namespace CRMTest
 
         [GenericTestCase(typeof(Lead))]
         [GenericTestCase(typeof(Teachers))]
-        [GenericTestCase(typeof(HR))]
+        [GenericTestCase(typeof(Admin))]
         [GenericTestCase(typeof(Course))]
         [GenericTestCase(typeof(Group))]
         [GenericTestCase(typeof(History))]

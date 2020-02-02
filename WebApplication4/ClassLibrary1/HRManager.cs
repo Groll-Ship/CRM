@@ -1,19 +1,11 @@
 ﻿using busines.Interface;
 using data.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace busines
 {
     public class HRManager: UserManager
     {
-        HRManager _hr;
-        public HRManager(HRManager hr)
-        {
-            _hr = hr;
-        }
-
         #region GET
 
         /// <summary>
@@ -53,7 +45,7 @@ namespace busines
         /// Get all HR
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<HR> GetHR() { return _storage.GetAll<HR>(); }
+        public IEnumerable<Admin> GetHR() { return _storage.GetAll<Admin>(); }
 
         /// <summary>
         /// Get all active leads or not 
