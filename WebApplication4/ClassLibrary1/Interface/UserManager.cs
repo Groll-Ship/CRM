@@ -19,10 +19,10 @@ namespace busines.Interface
             return _storage.Creat<T>();
         }
 
-        virtual public IEnumerable<T> Update<T, N, TWhere>(N indentity, TWhere objWhere) where T : new()
-        {
-            return _storage.Update<T, N, TWhere>(indentity, objWhere);
-        }
+        //virtual public IEnumerable<T> Update<T, N, TWhere>(N indentity, TWhere objWhere) where T : new()
+        //{
+        //    return _storage.Update<T, N, TWhere>(indentity, objWhere);
+        //}
 
     }
 }
