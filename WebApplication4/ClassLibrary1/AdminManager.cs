@@ -26,11 +26,11 @@ namespace busines
 
         #region DELETE
 
-        public bool DeleteCourseById(int id) { return _storage.Delete<Course, int>(id); }
-        public bool DeleteGroupByName(string name) { return _storage.Delete<Group, string>(name); }
-        public bool DeleteHRById(int id) { return _storage.Delete<HR, int>(id); }
-        public bool DeleteLeadById(int id) { return _storage.Delete<Lead, int>(id); }
-        public bool DeleteSkillsById(int id) { return _storage.Delete<Skills, int>(id); }
+        public bool DeleteCourse(Course course) { return _storage.Delete(course); }
+        public bool DeleteGroup(Group group) { return _storage.Delete(group); }
+        public bool DeleteHR(HR hr) { return _storage.Delete(hr); }
+        public bool DeleteLead(Lead lead) { return _storage.Delete(lead); }
+        public bool DeleteSkill(Skills skill) { return _storage.Delete(skill); }
 
         /// <summary>
         /// Delete lead skill by lead ID and skill ID
@@ -38,10 +38,14 @@ namespace busines
         /// <param name="leadId">Lead ID</param>
         /// <param name="skillId">Skill ID</param>
         /// <returns></returns>
-        public bool DeleteLeadSkillById(int leadId, int skillId) { return _storage.Delete<SkillsLead, int, int>(leadId, skillId); }
+        public bool DeleteLeadSkill(Lead lead, Skills skill)
+        {
+            SkillsLead skillsLead = new SkillsLead() { Lead = lead, LeadId = lead.Id, Skill = skill, SkillsId = skill.Id };
+            return _storage.Delete(skillsLead); 
+        }
 
-        public bool DeleteStatusById(int id) { return _storage.Delete<Status, int>(id); }
-        public bool DeleteTeacherById(int id) { return _storage.Delete<Teacher, int>(id); }
+        public bool DeleteStatus(Status status) { return _storage.Delete(status); }
+        public bool DeleteTeacher(Teacher teacher) { return _storage.Delete(teacher); }
 
         #endregion
 
