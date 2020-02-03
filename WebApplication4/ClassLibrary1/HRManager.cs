@@ -72,7 +72,7 @@ namespace busines
         /// Get all teachers
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Teachers> GetTeachers() { return _storage.GetAll<Teachers>(); }
+        public IEnumerable<Teacher> GetTeachers() { return _storage.GetAll<Teacher>(); }
 
         /// <summary>
         /// Get all lead history 
@@ -114,7 +114,7 @@ namespace busines
         /// Creat new teacher
         /// </summary>
         /// <returns>new created lead</returns>
-        public Teachers CreatTeacher() { return _storage.Creat<Teachers>(); }
+        public Teacher CreatTeacher() { return _storage.Creat<Teacher>(); }
 
         #endregion
 
@@ -144,7 +144,7 @@ namespace busines
         /// <param name="id">teacher ID</param>
         /// <param name="leadParams">Dictionary of teacher model property and set of teacher parameters</param>
         /// <returns></returns>
-        public Teachers UpdateTeacherParamsByID(int id, Dictionary<string, object> objParams) { return _storage.Update<Teachers, int>(id, objParams); }
+        public Teacher UpdateTeacherParamsByID(int id, Dictionary<string, object> objParams) { return _storage.Update<Teacher, int>(id, objParams); }
 
         #endregion
 

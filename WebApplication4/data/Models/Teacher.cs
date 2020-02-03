@@ -2,7 +2,7 @@
 
 namespace data.Models
 {
-    public class Teachers : IEntity
+    public class Teacher : IEntity
     {
         public int Id { get; set; }
         public string FName { get; set; }

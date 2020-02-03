@@ -10,11 +10,11 @@ namespace CRMTest
     class UnitTestTeacherManager
     {
         TeacherManager teacherManager;
-        Teachers teacher;
+        Teacher teacher;
         [SetUp]
         public void SetUp()
         {
-            teacher = new Teachers() { Id = 1, FName = "Bob", SName = "Cmith" };
+            teacher = new Teacher() { Id = 1, FName = "Bob", SName = "Cmith" };
             teacherManager = new TeacherManager(teacher);
         }
 

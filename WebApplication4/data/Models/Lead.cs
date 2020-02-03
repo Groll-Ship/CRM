@@ -47,5 +47,7 @@ namespace data.Models
         public Course Course { get; set; }
 
         public virtual ICollection<History> History { get; set; }
+
+       
     }
 }

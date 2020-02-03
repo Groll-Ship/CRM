@@ -41,7 +41,7 @@ namespace busines
         public bool DeleteLeadSkillById(int leadId, int skillId) { return _storage.Delete<SkillsLead, int, int>(leadId, skillId); }
 
         public bool DeleteStatusById(int id) { return _storage.Delete<Status, int>(id); }
-        public bool DeleteTeacherById(int id) { return _storage.Delete<Teachers, int>(id); }
+        public bool DeleteTeacherById(int id) { return _storage.Delete<Teacher, int>(id); }
 
         #endregion
 
