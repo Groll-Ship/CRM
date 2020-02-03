@@ -34,31 +34,61 @@ namespace busines
         public IEnumerable<SkillsLead> GetSkillsLead(Lead lead) { return (List<SkillsLead>)_storage.GetAll<SkillsLead>(lead); }
         public IEnumerable<Skills> GetSkills() { return (List<Skills>)_storage.GetAll<Skills>(); }
         public bool ChangeAccessStatusOfLead(Lead lead, bool accessStatus) { lead.AccessStatus = accessStatus; return _storage.Update(lead); }
-        //public bool AddSkillsForlead(Lead lead, params Skills[] skills)
-        //{
-         //   for (int i = 0; i < skills.Length; i++)
-        //        _storage.Add<SkillsLead, Lead, Skills>(lead, skills[i]);
-        //}
-        //public void AddAttendance(List<Lead> leads, DateTime dateTime)
-        //{
-        //    foreach (Lead item in leads)
-        //    {
-        //        _storage.Add<Log, Lead, DateTime>(item, dateTime);
-        //    }
-        //}
-        //public void AddCommentToLead(Lead lead, string comment)
-        //{
-        //    History history = new History() {LeadId = lead.Id, Lead = lead, HistoryText = DateTime.Now.ToString() + " " + comment };
-        //    _storage.Add(history);
-        //}
-        //public void AddCommentToAllLeadGroupe(Group group, string comment)
-        //{
-        //    _storage.Add<History, Group, string>(group, DateTime.Now.ToString() + " " + comment);
-        //}
-        //public void AddHistoryGroup(Group group, string comment)
-        //{
-        //    _storage.Add<HistoryGroup, Group, string>(group, DateTime.Now.ToString() + " " + comment);
-        //}
+        public void AddSkillsForlead(Lead lead, params Skills[] skills)
+        {
+            for (int i = 0; i < skills.Length; i++)
+            {
+                SkillsLead skillsLead = new SkillsLead(){
+                    Lead = lead,
+                    LeadId = lead.Id,
+                    Skill = skills[i],
+                    SkillsId = skills[i].Id
+                };
+                _storage.Add(skillsLead);
+            }
+
+        }
+        public void AddAttendance(List<Lead> leads, DateTime dateTime)
+        {
+            foreach (Lead item in leads)
+            {
+                Log log = new Log() { 
+                    LeadId = item.Id, 
+                    Lead = item, 
+                    Date = dateTime 
+                };
+                _storage.Add(log);
+            }
+        }
+        public void AddCommentToLead(Lead lead, string comment)
+        {
+            History history = new History() { 
+                LeadId = lead.Id, Lead = lead, 
+                HistoryText = DateTime.Now.ToString() + " " + comment 
+            };
+            _storage.Add(history);
+        }
+        public void AddCommentToAllLeadGroupe(Group group, string comment)
+        {
+            List<Lead> leds = (List<Lead>)_storage.GetAll<Lead>(group);
+            foreach(Lead item in leds){
+                History history = new History(){
+                    LeadId = item.Id,
+                    Lead = item,
+                    HistoryText = DateTime.Now.ToString() + " " + comment
+                };
+                _storage.Add(history);
+            }
+        }
+        public void AddHistoryGroup(Group group, string comment)
+        {
+            HistoryGroup historyGroup = new HistoryGroup{
+                Group = group,
+                GroupName = group.NameGroup,
+                HistoryText = DateTime.Now.ToString() + " " + comment
+            };
+            _storage.Add(historyGroup);
+        }
 
     }
 }   
