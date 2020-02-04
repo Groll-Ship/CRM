@@ -30,7 +30,7 @@ namespace busines
         public IEnumerable<Lead> GetLeadsGroup(Group group) { return (List<Lead>)_storage.GetAll<Lead>(group); }
         public IEnumerable<History> GetHistory(Lead lead) { return (List<History>)_storage.GetAll<History>(lead); }
         public IEnumerable<Log> GetLogLead(Lead lead) { return (List<Log>)_storage.GetAll<Log>(lead); }
-        public IEnumerable<Log> GetLogGrop(Group group) { return (List<Log>)_storage.GetAll<Log>(group); }
+        public IEnumerable<Log> GetLogGroup(Group group) { return (List<Log>)_storage.GetAll<Log>(group); }
         public IEnumerable<SkillsLead> GetSkillsLead(Lead lead) { return (List<SkillsLead>)_storage.GetAll<SkillsLead>(lead); }
         public IEnumerable<Skills> GetSkills() { return (List<Skills>)_storage.GetAll<Skills>(); }
         public bool ChangeAccessStatusOfLead(Lead lead, bool accessStatus) { lead.AccessStatus = accessStatus; return _storage.Update(lead); }

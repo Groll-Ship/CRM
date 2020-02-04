@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "busines", "ClassLibrary1\bu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data", "data\data.csproj", "{8FF08C14-29FB-4C53-9DDD-DAC032781215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRMTest", "CRMTest\CRMTest.csproj", "{53793277-0A6C-4274-87CD-49BA0F79C630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRMTest", "CRMTest\CRMTest.csproj", "{53793277-0A6C-4274-87CD-49BA0F79C630}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8FF08C14-29FB-4C53-9DDD-DAC032781215} = {8FF08C14-29FB-4C53-9DDD-DAC032781215}
+		{2E8671FD-535A-4C2E-9519-AAAF0B258761} = {2E8671FD-535A-4C2E-9519-AAAF0B258761}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

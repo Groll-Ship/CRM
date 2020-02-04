@@ -68,7 +68,7 @@ namespace CRMTest
         public void TestGetLogGroup()
         {
             Group group = new Group() { NameGroup = "C#001" };
-            List<Log> listresult = teacherManager.GetLogGrop(group).ToList();
+            List<Log> listresult = teacherManager.GetLogGroup(group).ToList();
             foreach (Log item in listresult)
                 Assert.AreEqual(group.NameGroup, item.Lead.NameGroup);
         }
