@@ -27,7 +27,7 @@ namespace data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-0LOB2O4;Initial Catalog=MyFirstACCESSDB;Integrated Security=True;Pooling=False");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-0LOB2O4;Initial Catalog=Test;Persist Security Info=True;User ID=admin;Password=123456;Pooling=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
