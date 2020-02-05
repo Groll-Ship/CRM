@@ -34,7 +34,7 @@ namespace data.Models
 
         public bool AccessStatus { get; set; }
 
-        [StringLength(50)]
+        
         public string NameGroup { get; set; }
         [ForeignKey("NameGroup")]
         public Group Group { get; set; }
@@ -45,6 +45,6 @@ namespace data.Models
         public int CourseId { get; set; }
         public Course Course { get; set; }
 
-        public virtual ICollection<History> History { get; set; }
+       
     }
 }
