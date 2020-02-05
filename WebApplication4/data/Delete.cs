@@ -9,15 +9,13 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public void Execute<T>(int ID) where T : IEntity, new()
+        public void Execute(IEntity obj)
         {
             using (ApplicationContext db = new ApplicationContext())
-            {                
-                T obj = new T();
-
+            {
                 if (obj is Lead)
                 {
-                    Lead lead = db.Leads.Find(ID);
+                    Lead lead = (Lead)obj;
                     if (lead != null)
                     {
                         db.Leads.Remove(lead);
@@ -26,7 +24,7 @@ namespace data
                 }
                 else if (obj is Course)
                 {
-                    Course course = db.Courses.Find(ID);
+                    Course course = (Course)obj;
                     if (course != null)
                     {
                         db.Courses.Remove(course);
@@ -35,7 +33,7 @@ namespace data
                 }
                 else if (obj is History)
                 {
-                    History hist = db.Historys.Find(ID);
+                    History hist = (History)obj;
                     if (hist != null)
                     {
                         db.Historys.Remove(hist);
@@ -44,7 +42,7 @@ namespace data
                 }
                 else if (obj is HistoryGroup)
                 {
-                    HistoryGroup hist = db.HistoryGroups.Find(ID);
+                    HistoryGroup hist = (HistoryGroup)obj;
                     if (hist != null)
                     {
                         db.HistoryGroups.Remove(hist);
@@ -53,7 +51,7 @@ namespace data
                 }
                 else if (obj is HR)
                 {
-                    HR hr = db.HRs.Find(ID);
+                    HR hr = (HR)obj;
                     if (hr != null)
                     {
                         db.HRs.Remove(hr);
@@ -62,7 +60,7 @@ namespace data
                 }
                 else if (obj is Log)
                 {
-                    Log log = db.Logs.Find(ID);
+                    Log log = (Log)obj;
                     if (log != null)
                     {
                         db.Logs.Remove(log);
@@ -71,7 +69,7 @@ namespace data
                 }
                 else if (obj is Skills)
                 {
-                    Skills skill = db.Skills.Find(ID);
+                    Skills skill = (Skills)obj;
                     if (skill != null)
                     {
                         db.Skills.Remove(skill);
@@ -80,7 +78,7 @@ namespace data
                 }
                 else if (obj is Status)
                 {
-                    Status status = db.Statuss.Find(ID);
+                    Status status = (Status)obj;
                     if (status != null)
                     {
                         db.Statuss.Remove(status);
@@ -89,7 +87,7 @@ namespace data
                 }
                 else if (obj is SkillsLead)
                 {
-                    SkillsLead skill = db.SkillsLeads.Find(ID);
+                    SkillsLead skill = (SkillsLead)obj;
                     if (skill != null)
                     {
                         db.SkillsLeads.Remove(skill);
@@ -98,7 +96,7 @@ namespace data
                 }
                 else if (obj is Teacher)
                 {
-                    Teacher teacher = db.Teacherss.Find(ID);
+                    Teacher teacher = (Teacher)obj;
                     if (teacher != null)
                     {
                         db.Teacherss.Remove(teacher);
@@ -107,7 +105,7 @@ namespace data
                 }
                 else if (obj is Group)
                 {
-                    Group group = db.Groups.Find(ID);
+                    Group group = (Group)obj;
                     if (group != null)
                     {
                         db.Groups.Remove(group);

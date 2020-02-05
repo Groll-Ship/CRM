@@ -9,7 +9,7 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public void Execute<T>(IEntity newObject) where T : IEntity, new()
+        public void Execute(IEntity newObject)
         {
             using (ApplicationContext db = new ApplicationContext())
             {                

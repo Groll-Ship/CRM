@@ -9,10 +9,10 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public void Execute<T>(IEntity objForUpdate) where T : IEntity, new()
+        public void Execute(IEntity objForUpdate)
         {
             using (ApplicationContext db = new ApplicationContext())
-            {       
+            {
 
                 if (objForUpdate is Lead)
                 {
