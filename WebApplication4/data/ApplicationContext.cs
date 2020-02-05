@@ -19,7 +19,7 @@ namespace data
         public DbSet<Skills> Skills { get; set; }
         public DbSet<Status> Statuss { get; set; }
         public DbSet<SkillsLead> SkillsLeads { get; set; }
-        public DbSet<Teachers> Teacherss { get; set; }
+        public DbSet<Teacher> Teacherss { get; set; }
         public DbSet<Group> Groups { get; set; }
         public ApplicationContext()
         {
@@ -35,6 +35,7 @@ namespace data
             modelBuilder.Entity<HistoryGroup>().HasNoKey();
             modelBuilder.Entity<Log>().HasNoKey();
             modelBuilder.Entity<SkillsLead>().HasNoKey();
+            modelBuilder.Entity<History>().HasNoKey();
             //base.OnModelCreating(modelBuilder);
 
         }
