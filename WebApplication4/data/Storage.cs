@@ -18,184 +18,284 @@ namespace data
             if (temp is Lead)
             {
                 List<Lead> leads = (List<Lead>)listprimari;
-                for(int i = 0; i<obj.Length; i++)
+                for (int i = 0; i < obj.Length; i++)
                 {
-                    for(int j = 0; j<leads.Count; j++)
+                    for (int j = 0; j < leads.Count; j++)
                     {
-                        if (obj[i].Equals(leads[j].Id) || )
+                        if (obj[i].Equals(leads[j].Id) ||
+                            obj[i].Equals(leads[j].FName) ||
+                            obj[i].Equals(leads[j].SName) ||
+                            obj[i].Equals(leads[j].DateBirthday) ||
+                            obj[i].Equals(leads[j].DateRegistration) ||
+                            obj[i].Equals(leads[j].EMail) ||
+                            obj[i].Equals(leads[j].Numder) ||
+                            obj[i].Equals(leads[j].CourseId) ||
+                            obj[i].Equals(leads[j].NameGroup) ||
+                            obj[i].Equals(leads[j].StatusId))
+                        { continue; }
+                        else
                         {
-                            continue;
+                            leads.RemoveAt(j);
                         }
-                        else 
-                        {
-                            leads[]
-                        }
-                    } 
-                    foreach(Lead item in leads)
-                    {
-                        
                     }
                 }
-                //IdCourse
-                //IdStatus
-                //GroupName
-                
+                return leads;
             }
-            return ??
+
+            else if (temp is Course)
+            {
+                List<Course> courses = (List<Course>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < courses.Count; j++)
+                    {
+                        if (obj[i].Equals(courses[j].Id) ||
+                            obj[i].Equals(courses[j].Name) ||
+                            obj[i].Equals(courses[j].CourseInfo))
+                        { continue; }
+                        else courses.RemoveAt(j);
+                    }
+                }
+                return courses;
+            }
+
+            else if (temp is Group)
+            {
+                List<Group> groups = (List<Group>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < groups.Count; j++)
+                    {
+                        if (obj[i].Equals(groups[j].NameGroup) ||
+                            obj[i].Equals(groups[j].CourseId) ||
+                            obj[i].Equals(groups[j].StartDate) ||
+                            obj[i].Equals(groups[j].TeacherId) ||
+                            obj[i].Equals(groups[j].Log))
+                        { continue; }
+                        else groups.RemoveAt(j);
+                    }
+                }
+                return groups;
+            }
+
+            else if (temp is History)
+            {
+                List<History> stories = (List<History>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < stories.Count; j++)
+                    {
+                        if (obj[i].Equals(stories[j].Id))
+                        { continue; }
+                        else stories.RemoveAt(j);
+                    }
+
+                }
+                return stories;
+            }
+
+            else if (temp is Skills)
+            {
+                List<Skills> skills = (List<Skills>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < skills.Count; j++)
+                    {
+                        if (obj[i].Equals(skills[j].Id))
+                        { continue; }
+                        else skills.RemoveAt(j);
+                    }
+                }
+                return skills;
+            }
+            else if (temp is SkillsLead)
+            {
+                List<SkillsLead> skillsLeads = (List<SkillsLead>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j <skillsLeads.Count; j++)
+                    {
+                        if (obj[i].Equals(skillsLeads[j].LeadId) ||
+                            obj[i].Equals(skillsLeads[j].SkillsId))
+                        { continue; }
+                        else skillsLeads.RemoveAt(j);
+                    }
+                }
+                return skillsLeads;
+            }
+            else if (temp is Teacher)
+            {
+                List<Teacher> teachers = (List<Teacher>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < teachers.Count; j++)
+                    {
+                        if (obj[i].Equals(teachers[j].Id) || 
+                            obj[i].Equals(teachers[j].FName) || 
+                            obj[i].Equals(teachers[j].SName))
+                            { continue; }
+                        else teachers.RemoveAt(j);
+                    }
+                }
+                return teachers;
+            }
+            else if (temp is Status)
+            {
+                List<Status> statuses = (List<Status>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < statuses.Count; j++)
+                    {
+                        if (obj[i].Equals(statuses[j].Id) ||
+                            obj[i].Equals(statuses[j].Name))
+                        { continue; }
+                        else statuses.RemoveAt(j);
+                    }
+                }
+                return statuses;
+            }
+            else if (temp is HR)
+            {
+                List<HR> hRs = (List<HR>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < hRs.Count; j++)
+                    {
+                        if (obj[i].Equals(hRs[j].Id) ||
+                            obj[i].Equals(hRs[j].FName) ||
+                            obj[i].Equals(hRs[j].SName))
+                        { continue; }
+                        else hRs.RemoveAt(j);
+                    }
+                }
+                return hRs;
+            }
+            else if (temp is HistoryGroup)
+            {
+                List<HistoryGroup> historyGroups = (List<HistoryGroup>)listprimari;
+                for (int i = 0; i < obj.Length; i++)
+                {
+                    for (int j = 0; j < historyGroups.Count; j++)
+                    {
+                        if (obj[i].Equals(historyGroups[j].GroupName))
+                            { continue; }   
+                    }
+                }
+            }
+
         }
 
 
         public bool Update(IEntity obj)
         {
             Update crudCommand = new Update();
-            if (obj is Lead)
-            {
-                Lead temp = obj as Lead;
-                crudCommand.Execute<Lead>(temp, temp.Id);
-                return true;
-
-            }
-            else if (obj is Course)
-            {
-                Course temp = obj as Course;
-                crudCommand.Execute<Course>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is History)
-            {
-                History temp = obj as History;
-                crudCommand.Execute<History>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is HistoryGroup)
-            {
-                HistoryGroup temp = obj as HistoryGroup;
-                crudCommand.Execute<HistoryGroup>(temp, temp.GroupName);
-                return true;
-            }
-            else if (obj is HR)
-            {
-                HR temp = obj as HR;
-                crudCommand.Execute<HR>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is Log)
-            {
-                Log temp = obj as Log;
-                crudCommand.Execute<Log>(temp, temp.LeadId);
-                return true;
-            }
-            else if (obj is Skills)
-            {
-                Skills temp = obj as Skills;
-                crudCommand.Execute<Skills>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is Status)
-            {
-                Status temp = obj as Status;
-                crudCommand.Execute<Status>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is SkillsLead)
-            {
-                SkillsLead temp = obj as SkillsLead;
-                crudCommand.Execute<SkillsLead>(temp, temp.LeadId);
-                return true;
-            }
-            else if (obj is Teachers)
-            {
-                Teachers temp = obj as Teachers;
-                crudCommand.Execute<Teachers>(temp, temp.Id);
-                return true;
-            }
-            else if (obj is Group)
-            {
-                Group temp = obj as Group;
-                crudCommand.Execute<Group>(temp, temp.NameGroup);
-                return true;
-            }
-            return false;
+            crudCommand.Execute(obj);
+            return true;
         }
         internal bool Delete(IEntity obj)
         {
-            Delete crudCommand = new Delete(); 
+            Delete crudCommand = new Delete();
+            IEnumerable<IEntity> listprimari;
             //Delete _del = new Delete();
 
             if (obj is Lead)
             {
-                Lead temp = obj as Lead;
-                crudCommand.Execute<History>(temp.Id);
-                crudCommand.Execute<SkillsLead>(temp.Id);
-                crudCommand.Execute<Log>(temp.Id);
-                crudCommand.Execute<Lead>(temp.Id);
+                Lead tempLead = obj as Lead;
+
+                listprimari = GetAll<History>(tempLead.Id);
+                foreach(History leadHistory in listprimari)
+                {
+                    crudCommand.Execute(leadHistory);
+                }
+
+                listprimari = GetAll<SkillsLead>(tempLead.Id);
+                foreach (SkillsLead leadSkills in listprimari)
+                {
+                    crudCommand.Execute(leadSkills);
+                }
+
+                listprimari = GetAll<Log>(tempLead.Id);
+                foreach (Log leadLog in listprimari)
+                {
+                    crudCommand.Execute(leadLog);
+                }
+
+                crudCommand.Execute(obj);
+
                 return true;
 
             }
             else if (obj is Course)
             {
                 Course temp = obj as Course;
-                crudCommand.Execute<Lead>(temp.Id);
-                crudCommand.Execute<Group>(temp.Id);
-                crudCommand.Execute<Course>(temp.Id);
+                
+                listprimari = GetAll<Lead>(temp.Id);
+                foreach (Lead leadHistory in listprimari)
+                {
+                    crudCommand.Execute(leadHistory);
+                }
+
+
+                listprimari = GetAll<Group>(temp.Id);
+                foreach (Group leadGroup in listprimari)
+                {
+                    crudCommand.Execute(leadGroup);
+                }
+                
+                crudCommand.Execute(obj);
                 return true;
             }
-            else if (obj is History)
+            else if (obj is History ||
+                     obj is HistoryGroup || 
+                     obj is HR || obj is Log || 
+                     obj is Status || 
+                     obj is SkillsLead )
             {
-                History temp = obj as History;
-                crudCommand.Execute<History>(temp.Id);
-                return true;
-            }
-            else if (obj is HistoryGroup)
-            {
-                HistoryGroup temp = obj as HistoryGroup;
-                crudCommand.Execute<HistoryGroup>(temp.GroupName); // уточнить на счет передачи параметра
-                return true;
-            }
-            else if (obj is HR)
-            {
-                HR temp = obj as HR;
-                crudCommand.Execute<HR>(temp.Id);
-                return true;
-            }
-            else if (obj is Log)
-            {
-                Log temp = obj as Log;
-                crudCommand.Execute<Log>(temp.LeadId); // ??
+                crudCommand.Execute(obj);
                 return true;
             }
             else if (obj is Skills)
             {
                 Skills temp = obj as Skills;
-                crudCommand.Execute<SkillsLead>(temp.Id);
-                crudCommand.Execute<Skills>(temp.Id);
+                listprimari = GetAll<SkillsLead>(temp.Id);
+                foreach (SkillsLead leadSkills in listprimari)
+                {
+                    crudCommand.Execute(leadSkills);
+                }
+                crudCommand.Execute(obj);
                 return true;
             }
-            else if (obj is Status)
+            else if (obj is Teacher)
             {
-                Status temp = obj as Status;
-                crudCommand.Execute<Status>(temp.Id);
-                return true;
-            }
-            else if (obj is SkillsLead)
-            {
-                SkillsLead temp = obj as SkillsLead;
-                crudCommand.Execute<SkillsLead>(temp.SkillsId);
-                return true;
-            }
-            else if (obj is Teachers)
-            {
-                Teachers temp = obj as Teachers;
-                crudCommand.Execute<Group>(temp.Id);
-                crudCommand.Execute<Teachers>(temp.Id);
+                Teacher temp = obj as Teacher;
+
+                listprimari = GetAll<Group>(temp.Id);
+                foreach (Group leadGroup in listprimari)
+                {
+                    crudCommand.Execute(leadGroup);
+                }
+                crudCommand.Execute(obj);
                 return true;
             }
             else if (obj is Group)
             {
                 Group temp = obj as Group;
-                crudCommand.Execute<Lead>(temp.GroupName);
-                crudCommand.Execute<HistoryGroup>(temp.GroupName);
-                crudCommand.Execute<Group>(temp.NameGroup); // та же проблема что и выше, ключ не int
+
+                listprimari = GetAll<Lead>(temp.Id);
+                foreach (Lead leadGroup in listprimari)
+                {
+                    leadGroup.NameGroup = null;
+                    Update(leadGroup);
+                }
+
+                listprimari = GetAll<HistoryGroup>(temp.Id);
+                foreach (HistoryGroup groupHistory in listprimari)
+                {
+                    crudCommand.Execute(groupHistory);
+                }
+                
+
+                crudCommand.Execute(obj); // та же проблема что и выше, ключ не int
                 return true;
             }
             return false;
@@ -206,7 +306,7 @@ namespace data
             crudCommand.Execute(obj);
             return true;
 
-            
+
         }
     }
 }
