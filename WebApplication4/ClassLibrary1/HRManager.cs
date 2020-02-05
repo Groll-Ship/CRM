@@ -1,6 +1,7 @@
 ﻿using busines.Interface;
 using CRMTest.stab;
 using data.Models;
+using System;
 using System.Collections.Generic;
 
 namespace busines
@@ -11,8 +12,6 @@ namespace busines
         {
             _storage = new StabStorage(this);
         }
-
-        //add history to Lead? add history togroup?  add new status? update status
 
         #region GET
 
@@ -144,6 +143,7 @@ namespace busines
             return _storage.Add(group); 
         }
 
+
         /// <summary>
         /// Creat new lead
         /// </summary>
@@ -162,46 +162,114 @@ namespace busines
             return _storage.Add(teacher); 
         }
 
+        /// <summary>
+        /// Add comment to lead
+        /// </summary>
+        /// <param name="lead">Lead object</param>
+        /// <param name="comment">Comment object</param>
+        public bool AddCommentToLead(Lead lead, string comment)
+        {
+            History history = new History()
+            {
+                LeadId = lead.Id,
+                Lead = lead,
+                HistoryText = DateTime.Now.ToString() + " " + comment
+            };
+            return _storage.Add(history);
+        }
+
         #endregion
 
         #region UPDATE
 
-        //public Course UpdateCourseParamsByID(int id, Dictionary<string, object> courseParams) { return _storage.Update<Course, int>(id, courseParams); }
 
         /// <summary>
-        /// Update Group parametersby group name
+        /// Change group for lead
         /// </summary>
-        /// <param name="name">Group name</param>
-        /// <param name="objParams">Dictionary of group model property and set of group parameters</param>
-        /// <returns></returns>
-        public bool UpdateGroup(Group group) 
+        /// <param name="lead">Lead object</param>
+        /// <param name="group">Group object</param>
+        public bool ChangeLeadGroup(Lead lead, Group group)
         {
-            return _storage.Update(group); 
+            lead.Group = group;
+            return UpdateLead(lead);
         }
 
         /// <summary>
-        /// Update lead parameters by lead ID
+        ///  Change course for lead
         /// </summary>
-        /// <param name="id">Lead ID</param>
-        /// <param name="leadParams">Dictionary of lead model property and set of lead parameters</param>
+        /// <param name="lead">Lead object</param>
+        /// <param name="course">Course object</param>
         /// <returns></returns>
-        public bool UpdateLead(Lead lead)
-        { 
-            return _storage.Update(lead); 
+        public bool ChangeLeadCourse(Lead lead, Course course)
+        {
+            lead.Course = course;
+            return UpdateLead(lead);
         }
 
         /// <summary>
-        /// Update teacher parameters by teacher ID
+        /// Change status for lead
         /// </summary>
-        /// <param name="id">teacher ID</param>
-        /// <param name="leadParams">Dictionary of teacher model property and set of teacher parameters</param>
+        /// <param name="lead">Lead object</param>
+        /// <param name="status">Status object</param>
         /// <returns></returns>
-        public bool UpdateTeacher(Teacher teacher) 
+        public bool ChangeLeadStatus(Lead lead, Status status)
         {
-            return _storage.Update(teacher); 
+            lead.Status = status;
+            return UpdateLead(lead);
+        }
+
+        /// <summary>
+        /// Add group to course
+        /// </summary>
+        /// <param name="group">Group object</param>
+        /// <param name="course">Course object</param>
+        /// <returns></returns>
+        public bool AddGroupToCourse(Group group, Course course)
+        {
+            group.Course = course;
+            return UpdateGroup(group);
+        }
+
+        /// <summary>
+        /// Change teacher for group
+        /// </summary>
+        /// <param name="group">Group object</param>
+        /// <param name="teacher">Teacher object</param>
+        /// <returns></returns>
+        public bool ChangeGroupTeacher(Group group, Teacher teacher)
+        {
+            group.Teacher = teacher;
+            return UpdateGroup(group);
         }
 
         #endregion
 
+
+        /// <summary>
+        /// Update Group parametersby group name
+        /// </summary>
+        ///  <returns></returns>
+        private bool UpdateGroup(Group group)
+        {
+            return _storage.Update(group);
+        }
+
+        /// <summary>
+        /// Update lead
+        /// </summary>
+        /// <returns></returns>
+        private bool UpdateLead(Lead lead)
+        {
+            return _storage.Update(lead);
+        }
+
+        /// <summary>
+        /// Update teacher
+        /// </summary>
+        /// <returns></returns>
+        private bool UpdateTeacher(Teacher teacher)
+        {
+            return _storage.Update(teacher);
+        }
     }
 }
