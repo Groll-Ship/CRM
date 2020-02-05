@@ -103,12 +103,12 @@ namespace data
                         db.SaveChanges();
                     }
                 }
-                else if (newObject is Teachers)
+                else if (newObject is Teacher)
                 {
-                    Teachers teacher = new Teachers();
+                    Teacher teacher = new Teacher();
                     if (teacher != null)
                     {
-                        teacher = (Teachers)newObject;
+                        teacher = (Teacher)newObject;
                         db.Teacherss.Add(teacher);
                         db.SaveChanges();
                     }

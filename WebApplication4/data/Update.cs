@@ -9,117 +9,117 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public void Execute<T>(IEntity objForUpdate, int ID) where T : IEntity, new()
+        public void Execute<T>(IEntity objForUpdate) where T : IEntity, new()
         {
             using (ApplicationContext db = new ApplicationContext())
             {       
 
                 if (objForUpdate is Lead)
                 {
-                    Lead lead = db.Leads.Find(ID);
-                    if (lead != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        lead = (Lead)objForUpdate;
+                        Lead lead = (Lead)objForUpdate;
                         db.Leads.Update(lead);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is Course)
                 {
-                    Course course = db.Courses.Find(ID);
-                    if (course != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        course = (Course)objForUpdate;
+                        Course course = (Course)objForUpdate;
                         db.Courses.Update(course);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is History)
                 {
-                    History hist = db.Historys.Find(ID);
-                    if (hist != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        hist = (History)objForUpdate;
+                        History hist = (History)objForUpdate;
                         db.Historys.Update(hist);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is HistoryGroup)
                 {
-                    HistoryGroup hist = db.HistoryGroups.Find(ID);
-                    if (hist != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        hist = (HistoryGroup)objForUpdate;
+                        HistoryGroup hist = (HistoryGroup)objForUpdate;
                         db.HistoryGroups.Update(hist);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is HR)
                 {
-                    HR hr = db.HRs.Find(ID);
-                    if (hr != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        hr = (HR)objForUpdate;
+                        HR hr = (HR)objForUpdate;
                         db.HRs.Update(hr);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is Log)
                 {
-                    Log log = db.Logs.Find(ID);
-                    if (log != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        log = (Log)objForUpdate;
+                        Log log = (Log)objForUpdate;
                         db.Logs.Update(log);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is Skills)
                 {
-                    Skills skills = db.Skills.Find(ID);
-                    if (skills != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        skills = (Skills)objForUpdate;
+                        Skills skills = (Skills)objForUpdate;
                         db.Skills.Update(skills);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is Status)
                 {
-                    Status status = db.Statuss.Find(ID);
-                    if (status != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        status = (Status)objForUpdate;
+                        Status status = (Status)objForUpdate;
                         db.Statuss.Update(status);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is SkillsLead)
                 {
-                    SkillsLead skills = db.SkillsLeads.Find(ID);
-                    if (skills != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        skills = (SkillsLead)objForUpdate;
+                        SkillsLead skills = (SkillsLead)objForUpdate;
                         db.SkillsLeads.Update(skills);
                         db.SaveChanges();
                     }
                 }
-                else if (objForUpdate is Teachers)
+                else if (objForUpdate is Teacher)
                 {
-                    Teachers teacher = db.Teacherss.Find(ID);
-                    if (teacher != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        teacher = (Teachers)objForUpdate;
+                        Teacher teacher = (Teacher)objForUpdate;
                         db.Teacherss.Update(teacher);
                         db.SaveChanges();
                     }
                 }
                 else if (objForUpdate is Group)
                 {
-                    Group group = db.Groups.Find(ID);
-                    if (group != null)
+                    
+                    if (objForUpdate != null)
                     {
-                        group = (Group)objForUpdate;
+                        Group group = (Group)objForUpdate;
                         db.Groups.Update(group);
                         db.SaveChanges();
                     }

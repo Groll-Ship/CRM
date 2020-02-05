@@ -89,7 +89,7 @@ namespace data
                         listObject.Add(item);
                     }
                 }
-                else if (obj is Teachers)
+                else if (obj is Teacher)
                 {
                     var listObjectTmp = db.Teacherss.ToList();
                     foreach (var item in listObjectTmp)

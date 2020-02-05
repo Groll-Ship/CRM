@@ -96,9 +96,9 @@ namespace data
                         db.SaveChanges();
                     }
                 }
-                else if (obj is Teachers)
+                else if (obj is Teacher)
                 {
-                    Teachers teacher = db.Teacherss.Find(ID);
+                    Teacher teacher = db.Teacherss.Find(ID);
                     if (teacher != null)
                     {
                         db.Teacherss.Remove(teacher);
