@@ -6,6 +6,7 @@ namespace data.Models
 {
     public class Lead : IEntity
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -44,7 +45,6 @@ namespace data.Models
 
         public int CourseId { get; set; }
         public Course Course { get; set; }
-
        
     }
 }
