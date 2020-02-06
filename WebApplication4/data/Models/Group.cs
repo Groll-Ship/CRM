@@ -11,7 +11,7 @@ namespace data.Models
         public Course Course { get; set; }
         public string StartDate { get; set; }
         public int TeacherId { get; set; }
-        public Teacher Teachers { get; set; }
+        public Teacher Teacher { get; set; }
         public string Log { get; set; }
     }
 }
