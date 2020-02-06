@@ -1,6 +1,7 @@
-﻿using busines.Interface;
+﻿using busines;
 using CRMTest.stab;
 using data.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -8,10 +9,6 @@ namespace busines
 {
     public class HRManager: UserManager
     {
-        public HRManager() 
-        {
-            _storage = new StabStorage(this);
-        }
 
         #region GET
 
@@ -137,28 +134,81 @@ namespace busines
         /// <summary>
         /// Creat new group
         /// </summary>
-        /// <returns>new created group</returns>
-        public bool AddGroup(Group group) 
+        /// <returns></returns>
+        public bool AddGroup(object obj, Course course, Teacher techer) 
         {
-            return _storage.Add(group); 
+            var dictionary = DeserializeObjectTodictionary(obj);
+
+            Group group = new Group()
+            {
+                NameGroup = (dictionary.ContainsKey("NameGroup")) ? dictionary["NameGroup"] : "",
+                Course = course,
+                StartDate = (dictionary.ContainsKey("StartDate")) ? dictionary["StartDate"] : "",
+                Teacher = techer,
+                Log = (dictionary.ContainsKey("Log")) ? dictionary["Log"] : "",
+            };
+            if (!_storage.Add(group)) return false; ;
+
+            HistoryGroup historyGroup = new HistoryGroup()
+            {
+                Group = group,
+                HistoryText = DateTime.Now.ToString() + "Группа создана.",
+            };
+            
+            if(!_storage.Add(historyGroup)) throw new Exception("Impossible to add history to group!");
+            return true;
         }
 
 
         /// <summary>
-        /// Creat new lead
+        /// Creat and Add Lead
         /// </summary>
-        /// <returns>new created lead</returns>
-        public bool AddLead(Lead lead) 
-        { 
-            return _storage.Add(lead); 
+        /// <param name="obj">obg IEntity</param>
+        /// <param name="group"></param>
+        /// <param name="status"></param>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        public bool AddLead(object obj, Group group, Status status, Course course)
+        {            
+            var dictionary = DeserializeObjectTodictionary(obj);
+
+            Lead lead = new Lead()
+            {
+                FName = (dictionary.ContainsKey("FName")) ? dictionary["FName"] : "",
+                SName = (dictionary.ContainsKey("SName")) ? dictionary["SName"] : "",
+                DateBirthday = (dictionary.ContainsKey("DateBirthday")) ? dictionary["DateBirthday"] : "",
+                DateRegistration = DateTime.Now.ToString(),
+                Numder = (dictionary.ContainsKey("Numder")) ? StringToInt(dictionary["Numder"]) : 0,
+                EMail = (dictionary.ContainsKey("EMail")) ? dictionary["EMail"] : "",
+                AccessStatus = false,
+                Group = group,
+                Course = course,
+                Status = status,
+            };
+            if(!_storage.Add(lead)) return false;
+
+            History history = new History()
+            {
+                Lead = lead,
+                HistoryText = DateTime.Now.ToString() + "  Студент зарегестрирован.",
+            };
+            if (!_storage.Add(history)) throw new Exception("Impossible to add history to Lead!");
+
+            return true;
         }
 
         /// <summary>
         /// Creat new teacher
         /// </summary>
-        /// <returns>new created lead</returns>
-        public bool AddTeacher(Teacher teacher) 
-        { 
+        /// <returns></returns>
+        public bool AddTeacher(Object obj) 
+        {
+            var dictionary = DeserializeObjectTodictionary(obj);
+            Teacher teacher = new Teacher()
+            {
+                FName = (dictionary.ContainsKey("FName")) ? dictionary["FName"] : "",
+                SName = (dictionary.ContainsKey("SName")) ? dictionary["SName"] : "",
+            };
             return _storage.Add(teacher); 
         }
 
@@ -271,5 +321,6 @@ namespace busines
         {
             return _storage.Update(teacher);
         }
+
     }
 }

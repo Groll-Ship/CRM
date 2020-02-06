@@ -1,4 +1,4 @@
-﻿using busines.Interface;
+﻿using busines;
 using CRMTest.stab;
 using data.Models;
 using System;
@@ -15,8 +15,6 @@ namespace busines
         public TeacherManager(Teacher teacher)
         {
             _teacher = teacher;
-            _storage = new StabStorage(this);
-
         }
 
         public IEnumerable<Group> GetGroups() {

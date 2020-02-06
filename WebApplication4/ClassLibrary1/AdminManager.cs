@@ -1,4 +1,5 @@
-﻿using busines.Interface;
+﻿using busines;
+using CRMTest.stab;
 using data.Models;
 using Newtonsoft.Json;
 using System;
@@ -8,6 +9,11 @@ namespace busines
 {
     public class AdminManager: UserManager
     {
+        HRManager _hrManager;
+        public AdminManager()
+        {
+            _hrManager = new HRManager();
+        }
 
         #region GET 
 
@@ -22,36 +28,24 @@ namespace busines
 
         public bool CreatLead(object obj, Group group, Status status, Course course)
         {
-            
-            string str = obj.ToString();
-            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(str);
+            return _hrManager.AddLead(obj, group, status, course);
+        }
 
-            Lead lead = new Lead(){
+        public bool CreatTeacher(object obj)
+        {
+            return _hrManager.AddTeacher(obj);
+        }
+
+        public bool CreatHR(Object obj)
+        {
+            var dictionary = DeserializeObjectTodictionary(obj);
+            Teacher teacher = new Teacher()
+            {
                 FName = (dictionary.ContainsKey("FName")) ? dictionary["FName"] : "",
                 SName = (dictionary.ContainsKey("SName")) ? dictionary["SName"] : "",
-                DateBirthday = (dictionary.ContainsKey("DateBirthday")) ? dictionary["DateBirthday"] : "",
-                DateRegistration = DateTime.Now.ToString(),
-                Numder = (dictionary.ContainsKey("Numder")) ? StringToInt(dictionary["Numder"]) : 0,
-                EMail = (dictionary.ContainsKey("EMail")) ? dictionary["EMail"] : "",
-                AccessStatus = false,
-                //NameGroup = group.NameGroup,
-                Group = group,
-                //CourseId = course.Id,
-                Course = course,
-                //StatusId = status.Id,
-                Status = status,
             };
-            _storage.Add(lead);
-
-            History history = new History(){
-                Lead = lead,
-                HistoryText = DateTime.Now.ToString() + "  Студент зарегестрирован.",
-            };
-            _storage.Add(history);
-
-            return true;
+            return _storage.Add(teacher);
         }
-        
         #endregion
 
         #region UPDATE 
@@ -84,10 +78,7 @@ namespace busines
         public bool DeleteTeacher(Teacher teacher) { return _storage.Delete(teacher); }
 
         #endregion
-        private int StringToInt(string str)
-        {
-            return int.TryParse(str, out int number) ? number : 0;
-        }
+        
 
     }
 }
