@@ -18,24 +18,24 @@ namespace data
             if (temp is Lead)
             {
                 List<Lead> leads = (List<Lead>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < leads.Count; i++)
                 {
-                    for (int j = 0; j < leads.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(leads[j].Id) ||
-                            obj[i].Equals(leads[j].FName) ||
-                            obj[i].Equals(leads[j].SName) ||
-                            obj[i].Equals(leads[j].DateBirthday) ||
-                            obj[i].Equals(leads[j].DateRegistration) ||
-                            obj[i].Equals(leads[j].EMail) ||
-                            obj[i].Equals(leads[j].Numder) ||
-                            obj[i].Equals(leads[j].CourseId) ||
-                            obj[i].Equals(leads[j].NameGroup) ||
-                            obj[i].Equals(leads[j].StatusId))
+                        if (obj[j].Equals(leads[i].Id) ||
+                            obj[j].Equals(leads[i].FName) ||
+                            obj[j].Equals(leads[i].SName) ||
+                            obj[j].Equals(leads[i].DateBirthday) ||
+                            obj[j].Equals(leads[i].DateRegistration) ||
+                            obj[j].Equals(leads[i].EMail) ||
+                            obj[j].Equals(leads[i].Numder) ||
+                            obj[j].Equals(leads[i].CourseId) ||
+                            obj[j].Equals(leads[i].NameGroup) ||
+                            obj[j].Equals(leads[i].StatusId))
                         { continue; }
                         else
                         {
-                            leads.RemoveAt(j);
+                            leads.RemoveAt(i);
                         }
                     }
                 }
@@ -45,15 +45,15 @@ namespace data
             else if (temp is Course)
             {
                 List<Course> courses = (List<Course>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < courses.Count; i++)
                 {
-                    for (int j = 0; j < courses.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(courses[j].Id) ||
-                            obj[i].Equals(courses[j].Name) ||
-                            obj[i].Equals(courses[j].CourseInfo))
+                        if (obj[j].Equals(courses[i].Id) ||
+                            obj[j].Equals(courses[i].Name) ||
+                            obj[j].Equals(courses[i].CourseInfo))
                         { continue; }
-                        else courses.RemoveAt(j);
+                        else courses.RemoveAt(i);
                     }
                 }
                 return courses;
@@ -62,17 +62,17 @@ namespace data
             else if (temp is Group)
             {
                 List<Group> groups = (List<Group>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < groups.Count; i++)
                 {
-                    for (int j = 0; j < groups.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(groups[j].NameGroup) ||
-                            obj[i].Equals(groups[j].CourseId) ||
-                            obj[i].Equals(groups[j].StartDate) ||
-                            obj[i].Equals(groups[j].TeacherId) ||
-                            obj[i].Equals(groups[j].Log))
+                        if (obj[j].Equals(groups[i].NameGroup) ||
+                            obj[j].Equals(groups[i].CourseId) ||
+                            obj[j].Equals(groups[i].StartDate) ||
+                            obj[j].Equals(groups[i].TeacherId) ||
+                            obj[j].Equals(groups[i].Log))
                         { continue; }
-                        else groups.RemoveAt(j);
+                        else groups.RemoveAt(i);
                     }
                 }
                 return groups;
@@ -81,13 +81,14 @@ namespace data
             else if (temp is History)
             {
                 List<History> stories = (List<History>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < stories.Count; i++)
                 {
-                    for (int j = 0; j < stories.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(stories[j].Id))
+                        if (obj[j].Equals(stories[i].Id) ||
+                            obj[j].Equals(stories[i].HistoryText))
                         { continue; }
-                        else stories.RemoveAt(j);
+                        else stories.RemoveAt(i);
                     }
 
                 }
@@ -97,13 +98,14 @@ namespace data
             else if (temp is Skills)
             {
                 List<Skills> skills = (List<Skills>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < skills.Count; i++)
                 {
-                    for (int j = 0; j < skills.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(skills[j].Id))
+                        if (obj[j].Equals(skills[i].Id) ||
+                            obj[j].Equals(skills[i].NameSkills))
                         { continue; }
-                        else skills.RemoveAt(j);
+                        else skills.RemoveAt(i);
                     }
                 }
                 return skills;
@@ -111,14 +113,14 @@ namespace data
             else if (temp is SkillsLead)
             {
                 List<SkillsLead> skillsLeads = (List<SkillsLead>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < skillsLeads.Count; i++)
                 {
-                    for (int j = 0; j <skillsLeads.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(skillsLeads[j].LeadId) ||
-                            obj[i].Equals(skillsLeads[j].SkillsId))
+                        if (obj[j].Equals(skillsLeads[i].LeadId) ||
+                            obj[j].Equals(skillsLeads[i].SkillsId))
                         { continue; }
-                        else skillsLeads.RemoveAt(j);
+                        else skillsLeads.RemoveAt(i);
                     }
                 }
                 return skillsLeads;
@@ -126,15 +128,15 @@ namespace data
             else if (temp is Teacher)
             {
                 List<Teacher> teachers = (List<Teacher>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < teachers.Count; i++)
                 {
-                    for (int j = 0; j < teachers.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(teachers[j].Id) || 
-                            obj[i].Equals(teachers[j].FName) || 
-                            obj[i].Equals(teachers[j].SName))
+                        if (obj[j].Equals(teachers[i].Id) || 
+                            obj[j].Equals(teachers[i].FName) || 
+                            obj[j].Equals(teachers[i].SName))
                             { continue; }
-                        else teachers.RemoveAt(j);
+                        else teachers.RemoveAt(i);
                     }
                 }
                 return teachers;
@@ -142,14 +144,14 @@ namespace data
             else if (temp is Status)
             {
                 List<Status> statuses = (List<Status>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < statuses.Count; i++)
                 {
-                    for (int j = 0; j < statuses.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(statuses[j].Id) ||
-                            obj[i].Equals(statuses[j].Name))
+                        if (obj[j].Equals(statuses[i].Id) ||
+                            obj[j].Equals(statuses[i].Name))
                         { continue; }
-                        else statuses.RemoveAt(j);
+                        else statuses.RemoveAt(i);
                     }
                 }
                 return statuses;
@@ -157,15 +159,15 @@ namespace data
             else if (temp is HR)
             {
                 List<HR> hRs = (List<HR>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < hRs.Count; i++)
                 {
-                    for (int j = 0; j < hRs.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(hRs[j].Id) ||
-                            obj[i].Equals(hRs[j].FName) ||
-                            obj[i].Equals(hRs[j].SName))
+                        if (obj[j].Equals(hRs[i].Id) ||
+                            obj[j].Equals(hRs[i].FName) ||
+                            obj[j].Equals(hRs[i].SName))
                         { continue; }
-                        else hRs.RemoveAt(j);
+                        else hRs.RemoveAt(i);
                     }
                 }
                 return hRs;
@@ -173,15 +175,18 @@ namespace data
             else if (temp is HistoryGroup)
             {
                 List<HistoryGroup> historyGroups = (List<HistoryGroup>)listprimari;
-                for (int i = 0; i < obj.Length; i++)
+                for (int i = 0; i < historyGroups.Count; i++)
                 {
-                    for (int j = 0; j < historyGroups.Count; j++)
+                    for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[i].Equals(historyGroups[j].GroupName))
+                        if (obj[j].Equals(historyGroups[i].GroupName) || 
+                            obj[j].Equals(historyGroups[i].HistoryText))
                             { continue; }   
                     }
                 }
+                return historyGroups;
             }
+            return null;
 
         }
 
@@ -196,7 +201,7 @@ namespace data
         {
             Delete crudCommand = new Delete();
             IEnumerable<IEntity> listprimari;
-            //Delete _del = new Delete();
+            
 
             if (obj is Lead)
             {
@@ -232,14 +237,16 @@ namespace data
                 listprimari = GetAll<Lead>(temp.Id);
                 foreach (Lead leadHistory in listprimari)
                 {
-                    crudCommand.Execute(leadHistory);
+                    leadHistory.CourseId = null; //////////////////////////////
+                    Update(leadHistory);
                 }
 
 
                 listprimari = GetAll<Group>(temp.Id);
                 foreach (Group leadGroup in listprimari)
                 {
-                    crudCommand.Execute(leadGroup);
+                    leadGroup.TeacherId = null; ///////////
+                    Update(leadGroup);
                 }
                 
                 crudCommand.Execute(obj);
@@ -272,7 +279,8 @@ namespace data
                 listprimari = GetAll<Group>(temp.Id);
                 foreach (Group leadGroup in listprimari)
                 {
-                    crudCommand.Execute(leadGroup);
+                    leadGroup.TeacherId = null; //////////////
+                    Update(leadGroup);
                 }
                 crudCommand.Execute(obj);
                 return true;
@@ -281,21 +289,21 @@ namespace data
             {
                 Group temp = obj as Group;
 
-                listprimari = GetAll<Lead>(temp.Id);
+                listprimari = GetAll<Lead>(temp.NameGroup);
                 foreach (Lead leadGroup in listprimari)
                 {
                     leadGroup.NameGroup = null;
                     Update(leadGroup);
                 }
 
-                listprimari = GetAll<HistoryGroup>(temp.Id);
+                listprimari = GetAll<HistoryGroup>(temp.NameGroup);
                 foreach (HistoryGroup groupHistory in listprimari)
                 {
                     crudCommand.Execute(groupHistory);
                 }
                 
 
-                crudCommand.Execute(obj); // та же проблема что и выше, ключ не int
+                crudCommand.Execute(obj); 
                 return true;
             }
             return false;
