@@ -1,10 +1,6 @@
-﻿using busines;
-using CRMTest.stab;
-using data.Models;
+﻿using data.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace busines
 {

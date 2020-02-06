@@ -1,7 +1,4 @@
-﻿using busines;
-using CRMTest.stab;
-using data.Models;
-using Newtonsoft.Json;
+﻿using data.Models;
 using System;
 using System.Collections.Generic;
 
@@ -281,7 +278,7 @@ namespace busines
         }
 
         /// <summary>
-        /// Change teacher for group
+        /// Change group teacher
         /// </summary>
         /// <param name="group">Group object</param>
         /// <param name="teacher">Teacher object</param>
