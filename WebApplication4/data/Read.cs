@@ -10,102 +10,68 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public List<IEntity> Execute<T>() where T :  IEntity, new()
+        public IEnumerable<IEntity> Execute<T>() where T :  IEntity, new()
         {
             using (ApplicationContext db = new ApplicationContext())
-            {
-                List<IEntity> listObject = new List<IEntity>();
+            {                
                 T obj = new T();
                 
                 if (obj is Lead)
                 {
-                    var listObjectTmp = db.Leads.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Lead> listObjectTmp = db.Leads.ToList();
+                    return listObjectTmp;                
                 }
                 else if (obj is Course)
                 {
-                    var listObjectTmp = db.Courses.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Course> listObjectTmp = db.Courses.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is History)
                 {
-                    var listObjectTmp = db.Historys.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<History> listObjectTmp = db.Historys.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is HistoryGroup)
                 {
-                    var listObjectTmp = db.HistoryGroups.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<HistoryGroup> listObjectTmp = db.HistoryGroups.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is HR)
                 {
-                    var listObjectTmp = db.HRs.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<HR> listObjectTmp = db.HRs.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is Log)
                 {
-                    var listObjectTmp = db.Logs.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Log> listObjectTmp = db.Logs.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is Skills)
                 {
-                    var listObjectTmp = db.Skills.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Skills> listObjectTmp = db.Skills.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is Status)
                 {
-                    var listObjectTmp = db.Statuss.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Status> listObjectTmp = db.Statuss.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is SkillsLead)
                 {
-                    var listObjectTmp = db.SkillsLeads.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<SkillsLead> listObjectTmp = db.SkillsLeads.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is Teacher)
                 {
-                    var listObjectTmp = db.Teacherss.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Teacher> listObjectTmp = db.Teacherss.ToList();
+                    return listObjectTmp;
                 }
                 else if (obj is Group)
                 {
-                    var listObjectTmp = db.Groups.ToList();
-                    foreach (var item in listObjectTmp)
-                    {
-                        listObject.Add(item);
-                    }
+                    List<Group> listObjectTmp = db.Groups.ToList();
+                    return listObjectTmp;
                 }
-                return listObject;
+                return null;
             }
         }
 
