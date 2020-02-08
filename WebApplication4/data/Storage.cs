@@ -6,7 +6,7 @@ using System.Text;
 
 namespace data
 {
-    class Storage
+    public class Storage
     {
 
         public ICommand crudCommand;
@@ -85,7 +85,7 @@ namespace data
                 {
                     for (int j = 0; j < obj.Length; j++)
                     {
-                        if (obj[j].Equals(stories[i].Id) ||
+                        if (obj[j].Equals(stories[i].Lead) ||
                             obj[j].Equals(stories[i].HistoryText))
                         { continue; }
                         else stories.RemoveAt(i);
@@ -197,7 +197,7 @@ namespace data
             crudCommand.Execute(obj);
             return true;
         }
-        internal bool Delete(IEntity obj)
+        public bool Delete(IEntity obj)
         {
             Delete crudCommand = new Delete();
             IEnumerable<IEntity> listprimari;
@@ -237,7 +237,7 @@ namespace data
                 listprimari = GetAll<Lead>(temp.Id);
                 foreach (Lead leadHistory in listprimari)
                 {
-                    leadHistory.CourseId = null; //////////////////////////////
+                    leadHistory.Course = null; //////////////////////////////
                     Update(leadHistory);
                 }
 
@@ -245,7 +245,7 @@ namespace data
                 listprimari = GetAll<Group>(temp.Id);
                 foreach (Group leadGroup in listprimari)
                 {
-                    leadGroup.TeacherId = null; ///////////
+                    leadGroup.Teacher = null; ///////////
                     Update(leadGroup);
                 }
                 
@@ -279,7 +279,7 @@ namespace data
                 listprimari = GetAll<Group>(temp.Id);
                 foreach (Group leadGroup in listprimari)
                 {
-                    leadGroup.TeacherId = null; //////////////
+                    leadGroup.Teacher = null; //////////////
                     Update(leadGroup);
                 }
                 crudCommand.Execute(obj);

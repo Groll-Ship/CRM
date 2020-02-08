@@ -1,4 +1,5 @@
 ﻿using CRMTest.stab;
+using data;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,10 @@ namespace busines
 {
     public abstract class UserManager
     {
-        protected StabStorage _storage;
+        protected Storage _storage;
         public UserManager()
         {
-            _storage = new StabStorage(this);
+            _storage = new Storage();
         }
 
         /// <summary>

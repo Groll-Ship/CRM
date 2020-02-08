@@ -1,4 +1,5 @@
-﻿using data.Models;
+﻿using busines.Cache;
+using data.Models;
 using System;
 using System.Collections.Generic;
 
@@ -7,16 +8,24 @@ namespace busines
     public class AdminManager: UserManager
     {
         HRManager _hrManager;
+        CacheAdmin _cache;
+        PablisherChangesInBD _pablisher;
+
         public AdminManager()
         {
             _hrManager = new HRManager();
+            _cache = new CacheAdmin();
+            _pablisher = PablisherChangesInBD.GetPablisher();
         }
 
         #region GET 
 
-        public IEnumerable<IEntity> GetAll<T>(params IEntity[] entity) where T: new ()
+        public IEnumerable<IEntity> GetAll<T>(params IEntity[] entity) where T: IEntity, new ()
         {
-            return _storage.GetAll<T>(entity);
+            T obj = new T();
+            if (obj is Lead) { return _cache.Leads; }
+            if (obj is Course) { return _cache.Courses; }
+            else { return null; }
         }
 
         #endregion
@@ -43,6 +52,19 @@ namespace busines
             };
             return _storage.Add(teacher);
         }
+        public bool CreatCourse(Object obj)
+        {
+            var dictionary = DeserializeObjectTodictionary(obj);
+            Course course = new Course
+            {
+                Name = (dictionary.ContainsKey("Name")) ? dictionary["Name"] : "",
+                CourseInfo = (dictionary.ContainsKey("CourseInfo")) ? dictionary["CourseInfo"] : "",
+            };
+            bool okey = _storage.Add(course);
+            if (okey)
+                _pablisher.Notify(course);
+            return okey;
+        }
         #endregion
 
         #region UPDATE 
@@ -53,7 +75,7 @@ namespace busines
 
         #region DELETE
 
-        public bool DeleteCourse(Course course) { return _storage.Delete(course); }
+        public bool DeleteCourse(Course course) { bool okey = _storage.Delete(course); if (okey) { _pablisher.Notify(course); } return okey; }
         public bool DeleteGroup(Group group) { return _storage.Delete(group); }
         public bool DeleteHR(HR hr) { return _storage.Delete(hr); }
         public bool DeleteLead(Lead lead) { return _storage.Delete(lead); }

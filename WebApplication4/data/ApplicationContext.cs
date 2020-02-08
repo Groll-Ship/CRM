@@ -25,9 +25,10 @@ namespace data
         {
             //Database.EnsureCreated();
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-0LOB2O4;Initial Catalog=Test;Persist Security Info=True;User ID=admin;Password=123456;Pooling=False");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CRMDevEducation;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,6 +36,7 @@ namespace data
             modelBuilder.Entity<HistoryGroup>().HasNoKey();
             modelBuilder.Entity<Log>().HasNoKey();
             modelBuilder.Entity<SkillsLead>().HasNoKey();
+            modelBuilder.Entity<History>().HasNoKey();
             //base.OnModelCreating(modelBuilder);
 
         }
