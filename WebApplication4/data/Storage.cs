@@ -186,6 +186,20 @@ namespace data
                 }
                 return historyGroups;
             }
+            else if (temp is Log)
+            {
+                List<Log> logs = (List<Log>)listprimari;
+                for (int i = 0; i < logs.Count; i++)
+                {
+                    for (int j = 0; j < obj.Length; j++)
+                    {
+                        if (obj[j].Equals(logs[i].LeadId) ||
+                            obj[j].Equals(logs[i].Date))
+                        { continue; }
+                    }
+                }
+                return logs;
+            }
             return null;
 
         }

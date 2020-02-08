@@ -39,17 +39,17 @@ namespace busines.Cache
         private void Set()
         {
             Storage _storage = new Storage();
-            //Leads = (List<Lead>)_storage.GetAll<Lead>();
+            Leads = (List<Lead>)_storage.GetAll<Lead>();
             Courses = (List<Course>)_storage.GetAll<Course>();
-            //Groups = (List<Group>)_storage.GetAll<Group>();
-            //Histories = (List<History>)_storage.GetAll<History>();
-            //HistoryGroups = (List<HistoryGroup>)_storage.GetAll<HistoryGroup>();
-            //HRs = (List<HR>)_storage.GetAll<HR>();
-            //Logs = (List<Log>)_storage.GetAll<Log>();
-            //Teachers = (List<Teacher>)_storage.GetAll<Teacher>();
-            //Skills = (List<Skills>)_storage.GetAll<Skills>();
-            //SkillsLeads = (List<SkillsLead>)_storage.GetAll<SkillsLead>();
-            //Statuses = (List<Status>)_storage.GetAll<Status>();
+            Groups = (List<Group>)_storage.GetAll<Group>();
+            Histories = (List<History>)_storage.GetAll<History>();
+            HistoryGroups = (List<HistoryGroup>)_storage.GetAll<HistoryGroup>();
+            HRs = (List<HR>)_storage.GetAll<HR>();
+            Logs = (List<Log>)_storage.GetAll<Log>();
+            Teachers = (List<Teacher>)_storage.GetAll<Teacher>();
+            Skills = (List<Skills>)_storage.GetAll<Skills>();
+            SkillsLeads = (List<SkillsLead>)_storage.GetAll<SkillsLead>();
+            Statuses = (List<Status>)_storage.GetAll<Status>();
             flagActual = true;
         }
 
