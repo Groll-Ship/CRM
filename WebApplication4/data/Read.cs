@@ -10,7 +10,7 @@ namespace data
     {
         public ApplicationContext db { get; set; }
 
-        public IEnumerable<IEntity> Execute<T>() where T :  IEntity, new()
+        public List<IEntity> Execute<T>() where T :  IEntity, new()
         {
             using (ApplicationContext db = new ApplicationContext())
             {
@@ -27,8 +27,11 @@ namespace data
                 }
                 else if (obj is Course)
                 {
-                    List<Course> courses = db.Courses.ToList();
-                    return courses;
+                    var listObjectTmp = db.Courses.ToList();
+                    foreach (var item in listObjectTmp)
+                    {
+                        listObject.Add(item);
+                    }
                 }
                 else if (obj is History)
                 {
