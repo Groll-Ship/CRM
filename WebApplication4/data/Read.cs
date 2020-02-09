@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace data
 {
@@ -17,8 +19,13 @@ namespace data
                 T obj = new T();
                 
                 if (obj is Lead)
-                {
-                    List<Lead> listObjectTmp = db.Leads.ToList();
+                {                    
+                    List<Lead> listObjectTmp = db.Leads
+                        .Include(l=>l.Status)
+                        .Include(l=>l.Course)
+                        .Include(l=>l.Group)
+                            .ThenInclude(gr=>gr.Teacher)   
+                        .ToList();
                     return listObjectTmp;                
                 }
                 else if (obj is Course)
@@ -28,12 +35,16 @@ namespace data
                 }
                 else if (obj is History)
                 {
-                    List<History> listObjectTmp = db.Historys.ToList();
+                    List<History> listObjectTmp = db.Historys
+                        .Include(hist=>hist.Lead)
+                        .ToList();
                     return listObjectTmp;
                 }
                 else if (obj is HistoryGroup)
                 {
-                    List<HistoryGroup> listObjectTmp = db.HistoryGroups.ToList();
+                    List<HistoryGroup> listObjectTmp = db.HistoryGroups
+                        .Include(hist=>hist.Group)
+                        .ToList();
                     return listObjectTmp;
                 }
                 else if (obj is HR)
@@ -43,7 +54,9 @@ namespace data
                 }
                 else if (obj is Log)
                 {
-                    List<Log> listObjectTmp = db.Logs.ToList();
+                    List<Log> listObjectTmp = db.Logs
+                        .Include(log=>log.Lead)
+                        .ToList();
                     return listObjectTmp;
                 }
                 else if (obj is Skills)
@@ -58,7 +71,10 @@ namespace data
                 }
                 else if (obj is SkillsLead)
                 {
-                    List<SkillsLead> listObjectTmp = db.SkillsLeads.ToList();
+                    List<SkillsLead> listObjectTmp = db.SkillsLeads
+                        .Include(s=>s.Lead)
+                        .Include(s=>s.Skills)
+                        .ToList();
                     return listObjectTmp;
                 }
                 else if (obj is Teacher)
@@ -68,7 +84,10 @@ namespace data
                 }
                 else if (obj is Group)
                 {
-                    List<Group> listObjectTmp = db.Groups.ToList();
+                    List<Group> listObjectTmp = db.Groups
+                        .Include(gr=>gr.Teacher)
+                        .Include(gr=>gr.Course)
+                        .ToList();
                     return listObjectTmp;
                 }
                 return null;

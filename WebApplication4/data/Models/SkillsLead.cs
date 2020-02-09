@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace data.Models
@@ -7,7 +8,7 @@ namespace data.Models
     {
         public int LeadId { get; set; }
         public Lead Lead { get; set; }
-        public int SkillsId { get; set; }
-        public Skills Skill { get; set; }
+        public List<int> SkillsId { get; set; }
+        public List<Skills> Skills { get; set; }
     }
 }
