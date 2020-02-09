@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Work\\Crm\\CRM\\WebApplication4\\data\\data.csproj": {}
+    "C:\\Users\\Администратор\\Desktop\\Home Work\\CRM\\WebApplication4\\data\\data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Work\\Crm\\CRM\\WebApplication4\\data\\data.csproj": {
+    "C:\\Users\\Администратор\\Desktop\\Home Work\\CRM\\WebApplication4\\data\\data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Work\\Crm\\CRM\\WebApplication4\\data\\data.csproj",
+        "projectUniqueName": "C:\\Users\\Администратор\\Desktop\\Home Work\\CRM\\WebApplication4\\data\\data.csproj",
         "projectName": "data",
-        "projectPath": "C:\\Users\\User\\Desktop\\Work\\Crm\\CRM\\WebApplication4\\data\\data.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Work\\Crm\\CRM\\WebApplication4\\data\\obj\\",
+        "projectPath": "C:\\Users\\Администратор\\Desktop\\Home Work\\CRM\\WebApplication4\\data\\data.csproj",
+        "packagesPath": "C:\\Users\\Администратор\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Администратор\\Desktop\\Home Work\\CRM\\WebApplication4\\data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Администратор\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,9 +56,17 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
