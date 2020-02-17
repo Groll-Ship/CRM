@@ -21,14 +21,15 @@ namespace data
         public DbSet<SkillsLead> SkillsLeads { get; set; }
         public DbSet<Teacher> Teacherss { get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet<UserLogin> UserLogins { get; set; }
         public ApplicationContext()
         {
             //Database.EnsureCreated();
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+           : base(options)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CRMDevEducation;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

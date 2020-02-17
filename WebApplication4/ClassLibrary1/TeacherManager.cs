@@ -28,20 +28,20 @@ namespace busines
         public IEnumerable<SkillsLead> GetSkillsLead(Lead lead) { return (List<SkillsLead>)_storage.GetAll<SkillsLead>(lead); }
         public IEnumerable<Skills> GetSkills() { return (List<Skills>)_storage.GetAll<Skills>(); }
         public bool ChangeAccessStatusOfLead(Lead lead, bool accessStatus) { lead.AccessStatus = accessStatus; return _storage.Update(lead); }
-        public void AddSkillsForlead(Lead lead, params Skills[] skills)
-        {
-            for (int i = 0; i < skills.Length; i++)
-            {
-                SkillsLead skillsLead = new SkillsLead(){
-                    Lead = lead,
-                    LeadId = lead.Id,
-                    Skill = skills[i],
-                    SkillsId = skills[i].Id
-                };
-                _storage.Add(skillsLead);
-            }
+        //public void AddSkillsForlead(Lead lead, params Skills[] skills)
+        //{
+        //    for (int i = 0; i < skills.Length; i++)
+        //    {
+        //        SkillsLead skillsLead = new SkillsLead(){
+        //            Lead = lead,
+        //            LeadId = lead.Id,
+        //            Skill = skills[i],
+        //            SkillsId = skills[i].Id
+        //        };
+        //        _storage.Add(skillsLead);
+        //    }
 
-        }
+        //}
         public void AddAttendance(List<Lead> leads, DateTime dateTime)
         {
             foreach (Lead item in leads)

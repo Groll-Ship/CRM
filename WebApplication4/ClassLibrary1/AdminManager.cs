@@ -87,11 +87,11 @@ namespace busines
         /// <param name="leadId">Lead ID</param>
         /// <param name="skillId">Skill ID</param>
         /// <returns></returns>
-        public bool DeleteLeadSkill(Lead lead, Skills skill)
-        {
-            SkillsLead skillsLead = new SkillsLead() { Lead = lead, LeadId = lead.Id, Skill = skill, SkillsId = skill.Id };
-            return _storage.Delete(skillsLead); 
-        }
+        //public bool DeleteLeadSkill(Lead lead, Skills skill)
+        //{
+            //SkillsLead skillsLead = new SkillsLead() { Lead = lead, LeadId = lead.Id, Skill = skill, SkillsId = skill.Id };
+            //return _storage.Delete(skillsLead); 
+        //}
 
         public bool DeleteStatus(Status status) { return _storage.Delete(status); }
         public bool DeleteTeacher(Teacher teacher) { return _storage.Delete(teacher); }
